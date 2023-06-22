@@ -25,7 +25,7 @@ cpt(){
   if [ -d "$1" ]; then
     (
        cd "$1"
-       find . -name '*' -type -f | sed  's/\.\///' | while read line; do
+       find . -name '*' -type f | sed  's/\.\///' | while read line; do
          $4 "$(dirname "$2/$line")"
          $3 "$1/$line" "$2/$line"
        done
