@@ -4,6 +4,9 @@ pkgrel=1
 arch=(all)
 multiarch=foreign
 
+depends=('bash>=4.2' 'findutils' 'coreutils' 'sed')
+url="https://github.com/huakim-tyk/globexec"
+
 package(){
   k="${pkgdir}/usr/bin/"
   mkdir -p "$k"
@@ -16,7 +19,6 @@ package(){
     echo 'copy "${@}"'
   ) > globexec
   chmod 755 globexec
-  depends=('bash>=4.2' 'findutils' 'coreutils' 'sed')
 }
 
 cpt(){
